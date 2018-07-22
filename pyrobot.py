@@ -222,7 +222,8 @@ class SerialCommandInterface(object):
   """
   def __init__(self, tty, baudrate):
     self.ser = serial.Serial(tty, baudrate=baudrate, timeout=SERIAL_TIMEOUT)
-    self.ser.open()
+#    self.ser.open()
+    self.ser.isOpen()
     self.opcodes = {}
     self.lock = threading.RLock()
 
